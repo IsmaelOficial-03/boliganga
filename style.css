@@ -2,8 +2,8 @@
 color: green;
 }
 body {
-  background: black; color: white; font-style:italic;
-}
-body {
-  center: center;
+  background: black; 
+  color: white; 
+  text-align: center;
+  font-style:italic;
 }
