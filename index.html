@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismael | Desarrollador Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --dark: #111111;
+            --gray: #1a1a1a;
+            --accent: #00d4ff;
+            --text: #f0f0f0;
+            --text-light: #aaaaaa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(16px);
+            background: rgba(10,10,10,0.9);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.7rem; font-weight: 700; color: white; }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .mobile-menu { display: none; font-size: 1.8rem; cursor: pointer; color: var(--text-light); }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .hero-text h1 { font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1.05; }
+        .typing { font-size: 1.75rem; color: var(--accent); margin-bottom: 1.5rem; }
+
+        .profile-img {
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            border: 6px solid var(--accent);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.3);
+        }
+
+        section {
+            padding: 130px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.7rem;
+            text-align: center;
+            margin-bottom: 4.5rem;
+            color: white;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--gray);
+            padding: 2.5rem 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .skill-card:hover { transform: translateY(-10px); }
+
+        .skill-icon {
+            font-size: 3.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--gray);
+            padding: 2.2rem;
+            border-radius: 16px;
+            transition: all 0.4s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        /* Contact */
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 16px 20px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .copy-btn {
+            background: var(--gray);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ISMAEL</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div>
+                <h1>Hola, soy Ismael</h1>
+                <div class="typing" id="typing-text"></div>
+                <p style="font-size: 1.3rem; color: var(--text-light); max-width: 520px;">
+                    Desarrollador web autodidacta apasionado por crear experiencias digitales modernas y funcionales.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <a href="#projects" class="btn">Ver Proyectos</a>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://via.placeholder.com/600x600/1a1a1a/00d4ff?text=ISMAEL" alt="Ismael" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="background: var(--dark);">
+        <h2 class="section-title">Sobre Mí</h2>
+        <p style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.25rem; color: var(--text-light);">
+            Soy un desarrollador autodidacta con gran pasión por la tecnología. 
+            Me especializo en construir sitios web modernos, optimizar servidores y aprender constantemente nuevas herramientas.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-html5 skill-icon"></i>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt skill-icon"></i>
+                <h3>CSS3</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js skill-icon"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-node-js skill-icon"></i>
+                <h3>Node.js</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-linux skill-icon"></i>
+                <h3>Linux</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-docker skill-icon"></i>
+                <h3>Docker</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" style="background: var(--dark);">
+        <h2 class="section-title">Servicios</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            <div class="card">
+                <h3><i class="fas fa-code" style="color:var(--accent); margin-right:12px;"></i> Desarrollo Web</h3>
+                <p style="margin-top: 1rem; color: var(--text-light);">Sitios web modernos, landing pages y aplicaciones web funcionales.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-paint-brush" style="color:var(--accent); margin-right:12px;"></i> Diseño UI/UX</h3>
+                <p style="margin-top: 1rem; color: var(--text-light);">Interfaces elegantes y centradas en la mejor experiencia del usuario.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-server" style="color:var(--accent); margin-right:12px;"></i> Administración de Servidores</h3>
+                <p style="margin-top: 1rem; color: var(--text-light);">Configuración, optimización y mantenimiento de servidores Linux.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Proyectos</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2rem;">
+            <div class="card">
+                <div style="height: 200px; background: linear-gradient(45deg, #222, #333); border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #444;">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Portfolio Personal</h3>
+                <p style="color: var(--text-light); margin: 12px 0;">Sitio web profesional con diseño moderno y animaciones.</p>
+                <a href="#" class="btn">Ver Proyecto</a>
+            </div>
+
+            <div class="card">
+                <div style="height: 200px; background: linear-gradient(45deg, #222, #333); border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #444;">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3>Game Server Panel</h3>
+                <p style="color: var(--text-light); margin: 12px 0;">Panel completo para gestión de servidores de juegos.</p>
+                <a href="#" class="btn">Ver Proyecto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: var(--dark);">
+        <h2 class="section-title">Hablemos</h2>
+        <div style="max-width: 700px; margin: 0 auto;">
+            
+            <!-- Formulario REAL con Formspree -->
+            <form action="https://formspree.io/f/mojolqgk" method="POST">
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="mensaje" rows="6" placeholder="Tu mensaje..." required></textarea>
+                <button type="submit" class="btn" style="width: 100%; padding: 16px;">Enviar Mensaje</button>
+            </form>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: var(--text-light); margin-bottom: 1rem;">O escríbeme directamente:</p>
+                <div style="background: var(--gray); padding: 1rem 2rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 15px;">
+                    <span style="color: var(--accent);">ismaeldev.studio@gmail.com</span>
+                    <button onclick="copyEmail()" class="copy-btn">
+                        <i class="fas fa-copy"></i> Copiar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 4rem 0; background: #050505; color: var(--text-light);">
+        <p>© 2026 Ismaeldev — Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Typing Effect
+        const texts = ["Desarrollador Web", "Diseñador UI", "Server Manager"];
+        let count = 0, index = 0;
+
+        function type() {
+            const el = document.getElementById('typing-text');
+            el.textContent = texts[count].slice(0, ++index);
+            if (index === texts[count].length) {
+                setTimeout(() => { index = 0; count = (count + 1) % texts.length; setTimeout(type, 1800); }, 2200);
+            } else setTimeout(type, 70);
+        }
+
+        // Copy Email
+        function copyEmail() {
+            navigator.clipboard.writeText("ismaeldev.studio@gmail.com");
+            alert("✅ Correo copiado al portapapeles");
+        }
+
+        window.onload = type;
+    </script>
+</body>
+</html>
